@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Leboncoin - Annonces{% endblock %}
+
+{% block body %}
+
+    <div id="annonces-root" data-test="{{ test | json_encode }}">
+
+    </div>
+
+{% endblock %}
+
+{% block javascripts %} {{ encore_entry_script_tags('Annonces') }}{% endblock %}
