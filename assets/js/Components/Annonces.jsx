@@ -1,12 +1,12 @@
-import '../../scss/Annonces.scss'
+import "../../scss/Annonces.scss"
 import React from 'react';
 
 const Annonces = () => {
 
 
     return (
-        <div className="jumbotron">
-
-        </div>
+        <h1>OK</h1>
     );
 };
+
+export default Annonces;
