@@ -2,14 +2,30 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
+use ApiPlatform\Core\Annotation\ApiResource;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Cocur\Slugify\Slugify;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnnonceRepository")
  * @ORM\HasLifecycleCallbacks()
+ * @ApiResource(
+ *     attributes={
+ *     "pagination_enabled"=false,
+ *     "order": {"prix":"desc"}
+ *     },
+ *     normalizationContext={
+ *     "groups"={"annonces_read"}
+ * }
+ * )
+ * @ApiFilter(SearchFilter::class, properties={"titre":"partial", "prix"})
+ * @ApiFilter(OrderFilter::class)
  */
 class Annonce
 {
@@ -17,47 +33,64 @@ class Annonce
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $titre;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $slug;
 
     /**
      * @ORM\Column(type="float")
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $prix;
 
     /**
      * @ORM\Column(type="text")
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $intro;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $coverImage;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="annonce", orphanRemoval=true)
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $images;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="annonces")
      * @ORM\JoinColumn(nullable=false)
+     * @Groups({"annonces_read"})
      */
     private $user;
 

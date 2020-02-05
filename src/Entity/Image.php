@@ -3,8 +3,10 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
+ *
  * @ORM\Entity(repositoryClass="App\Repository\ImageRepository")
  */
 class Image
@@ -13,16 +15,22 @@ class Image
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $url;
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Groups({"annonces_read"})
+     * @Groups({"users_read"})
      */
     private $caption;
 
