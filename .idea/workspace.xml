@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1be778e5-4942-429b-b047-92bb72c890ed" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +169,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -193,7 +191,8 @@
       <workItem from="1580816860029" duration="2351000" />
       <workItem from="1580822065483" duration="10599000" />
       <workItem from="1580834810365" duration="12446000" />
-      <workItem from="1580888544231" duration="2826000" />
+      <workItem from="1580888544231" duration="2881000" />
+      <workItem from="1580895798780" duration="1463000" />
     </task>
     <servers />
   </component>
@@ -205,17 +204,17 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="290" width="824" height="526" key="IDE.errors.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580818613022" />
-    <state x="684" y="224" key="SettingsEditor" timestamp="1580824483505">
+    <state x="684" y="224" key="SettingsEditor" timestamp="1580896768251">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="684" y="224" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1580824483505" />
+    <state x="684" y="224" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1580896768251" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1580840805240">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1580840805240" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1580889509953">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1580895885803">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1580889509953" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1580895885803" />
   </component>
 </project>
