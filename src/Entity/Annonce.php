@@ -88,9 +88,8 @@ class Annonce
     private $coverImage;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="annonce", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="annonce", orphanRemoval=true, cascade={"persist"})
      * @Groups({"annonces_read", "users_read"})
-     * @Assert\NotBlank(message="L'annonce doit avoir une ou plusieurs images")
      */
     private $images;
 
@@ -99,7 +98,6 @@ class Annonce
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"annonces_read"})
      * @Assert\NotNull(message="L'annonce doit avoir un utilisateur")
-     * @Assert\Length(min="10", minMessage="Le titre doit faire plus de 10 caractères", max="255", maxMessage="Le titre ne peut pas faire plus de 255 caractères")
      */
     private $user;
 
