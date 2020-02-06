@@ -27,6 +27,8 @@ class AppFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $faker = Factory::create('fr_FR');
+        $categories = ["Outillage", "Technologie", "Automobile"];
+        $region = ["Midy-Pyrénnées", "Alsace", "Ile-de-France"];
 
         for ($u = 0; $u <= 10; $u++) {
             $user = new User();
@@ -45,7 +47,9 @@ class AppFixtures extends Fixture
                     ->setDescription($faker->realText(550))
                     ->setCoverImage($faker->imageUrl(1000, 350))
                     ->setPrix(mt_rand(10, 440))
-                    ->setUser($user);
+                    ->setUser($user)
+                    ->setCategorie($categories[mt_rand(0, count($categories) - 1)])
+                    ->setRegion($region[mt_rand(0, count($region) - 1)]);
 
 
                 for ($i = 1; $i <= mt_rand(2, 7); $i++) {

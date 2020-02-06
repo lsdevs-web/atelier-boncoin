@@ -33,57 +33,49 @@ class Annonce
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $titre;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $description;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $slug;
 
     /**
      * @ORM\Column(type="float")
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $prix;
 
     /**
      * @ORM\Column(type="text")
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $intro;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $coverImage;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="annonce", orphanRemoval=true)
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $images;
 
@@ -93,6 +85,18 @@ class Annonce
      * @Groups({"annonces_read"})
      */
     private $user;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"annonces_read", "users_read"})
+     */
+    private $categorie;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"annonces_read", "users_read"})
+     */
+    private $region;
 
     public function __construct()
     {
@@ -222,6 +226,9 @@ class Annonce
         return $this;
     }
 
+    /**
+     * @return User|null
+     */
     public function getUser(): ?User
     {
         return $this->user;
@@ -230,6 +237,30 @@ class Annonce
     public function setUser(?User $user): self
     {
         $this->user = $user;
+
+        return $this;
+    }
+
+    public function getCategorie(): ?string
+    {
+        return $this->categorie;
+    }
+
+    public function setCategorie(string $categorie): self
+    {
+        $this->categorie = $categorie;
+
+        return $this;
+    }
+
+    public function getRegion(): ?string
+    {
+        return $this->region;
+    }
+
+    public function setRegion(string $region): self
+    {
+        $this->region = $region;
 
         return $this;
     }

@@ -15,22 +15,19 @@ class Image
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $url;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"annonces_read"})
-     * @Groups({"users_read"})
+     * @Groups({"annonces_read", "users_read"})
      */
     private $caption;
 
