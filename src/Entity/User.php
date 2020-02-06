@@ -8,8 +8,11 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -19,6 +22,7 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *     }
  * )
  * @ApiFilter(SearchFilter::class, properties={"nom":"partial", "prenom":"partial"})
+ * @UniqueEntity("email", message="Cet email est déjà utilisé")
  */
 class User implements UserInterface
 {
@@ -33,6 +37,9 @@ class User implements UserInterface
     /**
      * @ORM\Column(type="string", length=180, unique=true)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotNull(message="L'utilisateur doit avoir un email")
+     * @Assert\NotBlank(message="L'email ne peut pas être vide")
+     * @Assert\Email(message="L'email n'est pas au format valide")
      */
     private $email;
 
@@ -44,18 +51,27 @@ class User implements UserInterface
     /**
      * @var string The hashed password
      * @ORM\Column(type="string")
+     * @Assert\NotNull(message="Le mot de passe ne peut pas être null")
+     * @Assert\NotBlank(message="Le mot de passe ne peut pas être vide")
+     * @Assert\Length(min="10", minMessage="Le mot de passe doit faire au moins 10 caractères", max="255", maxMessage="Le mot de passe ne peut pas faire plus de 255 caractères")
      */
     private $password;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotNull(message="L'utilisateur doit avoir un prénom")
+     * @Assert\NotBlank(message="Le prénom ne peut pas être vide")
+     * @Assert\Type(type="string", message="Le prénom doit être du texte")
+     * @Assert\Length(min="3", minMessage="Le prenom doit faire au moins 3 caractères", max="255", maxMessage="Le prénom ne peut pas faire plus de 255 caractères")
      */
     private $prenom;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\Type(type="string", message="Le nom doit être du texte")
+     * @Assert\Length(min="3", minMessage="Le nom doit faire au moins 3 caractères", max="255", maxMessage="Le nom ne peut pas faire plus de 255 caractères")
      */
     private $nom;
 

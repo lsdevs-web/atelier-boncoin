@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  *
@@ -22,12 +23,18 @@ class Image
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\Type(type="string", message="L'url doit être du texte")
+     * @Assert\NotBlank(message="L'url de l'image ne peut pas être vide")
+     * @Assert\NotNull(message="L'url de l'image ne peut pas être nulle")
      */
     private $url;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="La légende de l'image ne peut pas être vide")
+     * @Assert\Length(min="10", minMessage="La légende doit faire au moins 10 caractères", max="100", maxMessage="La légende ne peut pas faire plus de 100 caractères")
+     * @Assert\Type(type="string", message="La légende doit être du texte")
      */
     private $caption;
 

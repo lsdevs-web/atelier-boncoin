@@ -7,10 +7,12 @@ use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\OrderFilter;
 use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Cocur\Slugify\Slugify;
+use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AnnonceRepository")
@@ -22,7 +24,8 @@ use Symfony\Component\Serializer\Annotation\Groups;
  *     },
  *     normalizationContext={
  *     "groups"={"annonces_read"}
- * }
+ *    },
+ *     denormalizationContext={"disable_type_enforcement"=true}
  * )
  * @ApiFilter(SearchFilter::class, properties={"titre":"partial", "prix"})
  * @ApiFilter(OrderFilter::class)
@@ -40,12 +43,16 @@ class Annonce
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="L'annonce doit avoir un titre")
+     * @Assert\Length(min="10", minMessage="Le titre doit faire plus de 10 caractères", max="255", maxMessage="Le titre ne peut pas faire plus de 255 caractères")
      */
     private $titre;
 
     /**
      * @ORM\Column(type="text")
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="L'annonce doit avoir une description")
+     * @Assert\Length(min="55", minMessage="L'annonce doit faire plus de 10 caractères", max="255", maxMessage="La description ne peut pas faire plus de 255 caractères")
      */
     private $description;
 
@@ -58,24 +65,32 @@ class Annonce
     /**
      * @ORM\Column(type="float")
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="L'annonce doit avoir un prix")
+     * @Assert\Type(type="numeric", message="Le prix doit être un nombre")
+     * @Assert\PositiveOrZero(message="Le prix ne peut pas être négatif")
      */
     private $prix;
 
     /**
      * @ORM\Column(type="text")
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="L'annonce doit avoir une introduction")
+     * @Assert\Length(min="10", minMessage="L'introduction' doit faire plus de 10 caractères", max="255", maxMessage="L'introduction ne peut pas faire plus de 255 caractères")
      */
     private $intro;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="L'annonce doit avoir une image de couverture")
+     * @Assert\Type(type="string", message="L'image de couverture doit être une url")
      */
     private $coverImage;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="annonce", orphanRemoval=true)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="L'annonce doit avoir une ou plusieurs images")
      */
     private $images;
 
@@ -83,20 +98,36 @@ class Annonce
      * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="annonces")
      * @ORM\JoinColumn(nullable=false)
      * @Groups({"annonces_read"})
+     * @Assert\NotNull(message="L'annonce doit avoir un utilisateur")
+     * @Assert\Length(min="10", minMessage="Le titre doit faire plus de 10 caractères", max="255", maxMessage="Le titre ne peut pas faire plus de 255 caractères")
      */
     private $user;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotNull(message="L'annonce doit avoir une catégories")
+     * @Assert\Type(type="string", message="La catégorie doit être du texte")
      */
     private $categorie;
 
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotNull(message="L'annonce doit avoir une région")
+     * @Assert\Type(type="string", message="La région doit être du texte")
      */
     private $region;
+
+    /**
+     * @ORM\Column(type="datetime")
+     * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotNull(message="L'annonce doit avoir une date de création")
+     * @Assert\Type(
+     * type = "\DateTime",
+     * message = "La date renseignée doit être au format YYYY-MM-DD !"
+     * )*/
+    private $postedAt;
 
     public function __construct()
     {
@@ -164,7 +195,7 @@ class Annonce
         return $this->prix;
     }
 
-    public function setPrix(float $prix): self
+    public function setPrix($prix): self
     {
         $this->prix = $prix;
 
@@ -261,6 +292,18 @@ class Annonce
     public function setRegion(string $region): self
     {
         $this->region = $region;
+
+        return $this;
+    }
+
+    public function getPostedAt(): ?DateTimeInterface
+    {
+        return $this->postedAt;
+    }
+
+    public function setPostedAt($postedAt): self
+    {
+        $this->postedAt = $postedAt;
 
         return $this;
     }
