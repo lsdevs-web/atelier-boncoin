@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1be778e5-4942-429b-b047-92bb72c890ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +197,7 @@
       <workItem from="1580980072672" duration="1758000" />
       <workItem from="1580992869909" duration="382000" />
       <workItem from="1581004463291" duration="13241000" />
-      <workItem from="1581062723388" duration="3922000" />
+      <workItem from="1581062723388" duration="5974000" />
     </task>
     <servers />
   </component>
@@ -210,10 +209,10 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="290" width="824" height="526" key="IDE.errors.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580818613022" />
-    <state x="659" y="351" width="591" height="405" key="NewPhpClassDialog" timestamp="1581016651043">
+    <state x="659" y="351" width="655" height="405" key="NewPhpClassDialog" timestamp="1581068756247">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="659" y="351" width="591" height="405" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581016651043" />
+    <state x="659" y="351" width="655" height="405" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581068756247" />
     <state x="684" y="224" key="SettingsEditor" timestamp="1580907479237">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
