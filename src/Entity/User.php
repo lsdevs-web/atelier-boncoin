@@ -81,6 +81,14 @@ class User implements UserInterface
      */
     private $annonces;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Regex(pattern="/^\(0\)[0-9]*$", message="Le numéro n'est pas au bon format")
+     * @Assert\NotBlank(message="Le numéro de téléphone ne peut pas être nul")
+     * @Groups({"users_read", "annonces_read"})
+     */
+    private $phone;
+
     public function __construct()
     {
         $this->annonces = new ArrayCollection();
@@ -215,6 +223,18 @@ class User implements UserInterface
                 $annonce->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPhone(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function setPhone(string $phone): self
+    {
+        $this->phone = $phone;
 
         return $this;
     }

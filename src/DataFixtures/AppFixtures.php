@@ -39,7 +39,9 @@ class AppFixtures extends Fixture
                 ->setNom($faker->lastName)
                 ->setPrenom($faker->firstName)
                 ->setRoles(['ROLE_USER'])
-                ->setPassword($hash);
+                ->setPassword($hash)
+                ->setPhone($faker->phoneNumber);
+
 
             for ($a = 1; $a <= mt_rand(3, 20); $a++) {
                 $annonce = new Annonce();
