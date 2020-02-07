@@ -40,7 +40,7 @@ class CurrentUserExtension implements QueryCollectionExtensionInterface, QueryIt
         $data = $this->request->getCurrentRequest()->get("all");
 
 
-        if ($resourceClass === Annonce::class && $data == 1) {
+        if ($resourceClass === Annonce::class && $data == 0) {
             $rootAlias = $queryBuilder->getRootAliases()[0];
             $queryBuilder->andWhere("$rootAlias.user  = :user");
             $queryBuilder->setParameter("user", $user);
