@@ -81,9 +81,16 @@ class User implements UserInterface
      */
     private $annonces;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ContactMessage", mappedBy="user")
+     * @Groups({"users_read"})
+     */
+    private $contactMessages;
+
     public function __construct()
     {
         $this->annonces = new ArrayCollection();
+        $this->contactMessages = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -213,6 +220,37 @@ class User implements UserInterface
             // set the owning side to null (unless already changed)
             if ($annonce->getUser() === $this) {
                 $annonce->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ContactMessage[]
+     */
+    public function getContactMessages(): Collection
+    {
+        return $this->contactMessages;
+    }
+
+    public function addContactMessage(ContactMessage $contactMessage): self
+    {
+        if (!$this->contactMessages->contains($contactMessage)) {
+            $this->contactMessages[] = $contactMessage;
+            $contactMessage->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContactMessage(ContactMessage $contactMessage): self
+    {
+        if ($this->contactMessages->contains($contactMessage)) {
+            $this->contactMessages->removeElement($contactMessage);
+            // set the owning side to null (unless already changed)
+            if ($contactMessage->getUser() === $this) {
+                $contactMessage->setUser(null);
             }
         }
 

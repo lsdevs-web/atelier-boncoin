@@ -127,9 +127,16 @@ class Annonce
      * )*/
     private $postedAt;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ContactMessage", mappedBy="annonce")
+     * @Groups({"users_read"})
+     */
+    private $contactMessages;
+
     public function __construct()
     {
         $this->images = new ArrayCollection();
+        $this->contactMessages = new ArrayCollection();
     }
 
     /**
@@ -302,6 +309,37 @@ class Annonce
     public function setPostedAt($postedAt): self
     {
         $this->postedAt = $postedAt;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ContactMessage[]
+     */
+    public function getContactMessages(): Collection
+    {
+        return $this->contactMessages;
+    }
+
+    public function addContactMessage(ContactMessage $contactMessage): self
+    {
+        if (!$this->contactMessages->contains($contactMessage)) {
+            $this->contactMessages[] = $contactMessage;
+            $contactMessage->setAnnonce($this);
+        }
+
+        return $this;
+    }
+
+    public function removeContactMessage(ContactMessage $contactMessage): self
+    {
+        if ($this->contactMessages->contains($contactMessage)) {
+            $this->contactMessages->removeElement($contactMessage);
+            // set the owning side to null (unless already changed)
+            if ($contactMessage->getAnnonce() === $this) {
+                $contactMessage->setAnnonce(null);
+            }
+        }
 
         return $this;
     }

@@ -3,8 +3,10 @@
 namespace App\DataFixtures;
 
 use App\Entity\Annonce;
+use App\Entity\ContactMessage;
 use App\Entity\Image;
 use App\Entity\User;
+use DateTime;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Faker\Factory;
@@ -50,10 +52,7 @@ class AppFixtures extends Fixture
                     ->setUser($user)
                     ->setCategorie($categories[mt_rand(0, count($categories) - 1)])
                     ->setRegion($region[mt_rand(0, count($region) - 1)])
-                    ->setPostedAt(new \DateTime());
-
-
-
+                    ->setPostedAt(new DateTime());
 
                 for ($i = 1; $i <= mt_rand(2, 7); $i++) {
                     $image = new Image();
@@ -63,8 +62,21 @@ class AppFixtures extends Fixture
                     $manager->persist($image);
                 }
 
+                for ($i = 1; $i <= mt_rand(0, 2); $i++) {
+                    $message = new ContactMessage();
+                    $message->setUser($user)
+                        ->setAnnonce($annonce)
+                        ->setTitle($faker->sentence('5'))
+                        ->setContent($faker->realText());
+                    $annonce->addContactMessage($message);
+
+                    $manager->persist($message);
+                }
+
                 $manager->persist($annonce);
+
             }
+
 
             $manager->persist($user);
 
