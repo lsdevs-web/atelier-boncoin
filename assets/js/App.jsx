@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import "../scss/Dependencies.scss"
 import Home from "./Components/Home";
 import Annonces from './Components/Annonces'
 import {HashRouter, Route, Switch} from "react-router-dom";
