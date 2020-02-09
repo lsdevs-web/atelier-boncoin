@@ -49,7 +49,7 @@ class AppFixtures extends Fixture
                 $annonce->setTitre($faker->sentence())
                     ->setIntro($faker->paragraph(2))
                     ->setDescription($faker->realText(550))
-                    ->setCoverImage($faker->imageUrl(1000, 350))
+                    ->setCoverImage("https://placehold.it/500x300")
                     ->setPrix(mt_rand(10, 440))
                     ->setUser($user)
                     ->setCategorie($categories[mt_rand(0, count($categories) - 1)])

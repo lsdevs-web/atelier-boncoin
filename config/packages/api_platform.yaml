@@ -1,6 +1,8 @@
 api_platform:
   title: "Leboncoin - API"
   show_webby: false
+  # Enable the Swagger documentation and export.
+  enable_swagger: false
   mapping:
     paths: ['%kernel.project_dir%/src/Entity']
   patch_formats:
