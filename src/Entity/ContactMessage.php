@@ -60,7 +60,7 @@ class ContactMessage
 
     public function setTitle(string $title): self
     {
-        $this->title = $title;
+        $this->title = strip_tags($title);
 
         return $this;
     }
@@ -72,7 +72,7 @@ class ContactMessage
 
     public function setContent(string $content): self
     {
-        $this->content = $content;
+        $this->content = strip_tags($content);
 
         return $this;
     }

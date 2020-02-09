@@ -56,7 +56,7 @@ class Image
 
     public function setUrl(string $url): self
     {
-        $this->url = $url;
+        $this->url = strip_tags($url);
 
         return $this;
     }
@@ -68,7 +68,7 @@ class Image
 
     public function setCaption(string $caption): self
     {
-        $this->caption = $caption;
+        $this->caption = strip_tags($caption);
 
         return $this;
     }

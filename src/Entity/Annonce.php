@@ -166,7 +166,7 @@ class Annonce
 
     public function setTitre(string $titre): self
     {
-        $this->titre = $titre;
+        $this->titre = strip_tags($titre);
 
         return $this;
     }
@@ -178,7 +178,7 @@ class Annonce
 
     public function setDescription(string $description): self
     {
-        $this->description = $description;
+        $this->description = strip_tags($description);
 
         return $this;
     }
@@ -190,7 +190,7 @@ class Annonce
 
     public function setSlug(string $slug): self
     {
-        $this->slug = $slug;
+        $this->slug = strip_tags($slug);
 
         return $this;
     }
@@ -214,7 +214,7 @@ class Annonce
 
     public function setIntro(string $intro): self
     {
-        $this->intro = $intro;
+        $this->intro = strip_tags($intro);
 
         return $this;
     }
@@ -226,7 +226,7 @@ class Annonce
 
     public function setCoverImage(string $coverImage): self
     {
-        $this->coverImage = $coverImage;
+        $this->coverImage = strip_tags($coverImage);
 
         return $this;
     }
@@ -284,7 +284,7 @@ class Annonce
 
     public function setCategorie(string $categorie): self
     {
-        $this->categorie = $categorie;
+        $this->categorie = strip_tags($categorie);
 
         return $this;
     }
@@ -296,7 +296,7 @@ class Annonce
 
     public function setRegion(string $region): self
     {
-        $this->region = $region;
+        $this->region = strip_tags($region);
 
         return $this;
     }

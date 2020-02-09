@@ -4,11 +4,12 @@
     <list default="true" id="1be778e5-4942-429b-b047-92bb72c890ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/Dependencies.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/Dependencies.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/Components/Navbar.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/packages/security.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/security.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/ContactMessage.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/ContactMessage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Image.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +210,8 @@
       <workItem from="1581086769436" duration="736000" />
       <workItem from="1581101669240" duration="2132000" />
       <workItem from="1581109560360" duration="439000" />
-      <workItem from="1581119178721" duration="1080000" />
+      <workItem from="1581119178721" duration="1358000" />
+      <workItem from="1581247925506" duration="1167000" />
     </task>
     <servers />
   </component>
@@ -233,9 +235,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1580840805240" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581101893831">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581248419239">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581101893831" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581248419239" />
   </component>
 </project>

@@ -106,7 +106,7 @@ class User implements UserInterface
 
     public function setEmail(string $email): self
     {
-        $this->email = $email;
+        $this->email = strip_tags($email);
 
         return $this;
     }
@@ -179,7 +179,7 @@ class User implements UserInterface
 
     public function setPrenom(string $prenom): self
     {
-        $this->prenom = $prenom;
+        $this->prenom = strip_tags($prenom);
 
         return $this;
     }
@@ -191,7 +191,7 @@ class User implements UserInterface
 
     public function setNom(string $nom): self
     {
-        $this->nom = $nom;
+        $this->nom = strip_tags($nom);
 
         return $this;
     }
@@ -234,7 +234,7 @@ class User implements UserInterface
 
     public function setPhone(string $phone): self
     {
-        $this->phone = $phone;
+        $this->phone = strip_tags($phone);
 
         return $this;
     }

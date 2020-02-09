@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom'
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "../scss/Dependencies.scss"
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import Annonces from './Components/Annonces'
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import NotFound from "./Components/NotFound";
 
 const App = () => {
