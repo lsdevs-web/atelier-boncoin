@@ -4,6 +4,9 @@
     <list default="true" id="1be778e5-4942-429b-b047-92bb72c890ed" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/Components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/Components/Services/Pagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Services/Pagination.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,20 @@
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -207,7 +224,9 @@
       <workItem from="1581119178721" duration="1358000" />
       <workItem from="1581247925506" duration="1228000" />
       <workItem from="1581256571473" duration="9241000" />
-      <workItem from="1581273110627" duration="886000" />
+      <workItem from="1581273110627" duration="1536000" />
+      <workItem from="1581329404324" duration="1266000" />
+      <workItem from="1581335502380" duration="6100000" />
     </task>
     <servers />
   </component>
@@ -231,9 +250,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1580840805240" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581265828672">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581341090402">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581265828672" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581341090402" />
   </component>
 </project>

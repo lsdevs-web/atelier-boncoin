@@ -25,8 +25,8 @@ const Pagination = ({currentPage, itemsPerPage, Length, onPageChanged}) => {
                             )}
                             <li className={"page-item " + (currentPage === pageCount && "disabled")}>
                                 <button className="page-link" onClick={() => {
-                                    onPageChanged(currentPage + 1);
                                     window.scrollTo(0, 0);
+                                    onPageChanged(currentPage + 1);
                                 }}>&raquo;</button>
                             </li>
                         </ul>

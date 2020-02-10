@@ -7,6 +7,11 @@ const Annonces = () => {
 
     const [annoncesData, setAnnoncesData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [searchData, setSearch] = useState({
+        categorie: "",
+        region: "",
+        search: ""
+    });
 
     useEffect(() => {
         Axios.get("https://127.0.0.1:8000/api/annonces")
@@ -21,12 +26,70 @@ const Annonces = () => {
         setCurrentPage(page)
     };
 
-    const paginatedAnnonces = Pagination.getData(annoncesData, currentPage, itemsPerPage);
+
+    const filteredAnnonces = annoncesData.filter(annonce =>
+        (
+            annonce.titre.toLowerCase().includes(searchData.search.toLowerCase())
+            || annonce.user.prenom.toLowerCase().includes(searchData.search.toLowerCase())
+            || annonce.user.nom.toLowerCase().includes(searchData.search.toLowerCase())
+        )
+
+        && annonce.categorie.toLowerCase().includes(searchData.categorie.toLowerCase())
+        && annonce.region.toLowerCase().includes(searchData.region.toLowerCase())
+    );
+
+    const paginatedAnnonces = Pagination.getData(filteredAnnonces, currentPage, itemsPerPage);
+
+    const handleSearch = (e) => {
+        const value = e.target.value;
+        setSearch({...searchData, search: value});
+        setCurrentPage(1);
+    };
+
+    const handleSelect = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+
+        if (value === "Tous") {
+            setSearch({...searchData, [name]: ""})
+        } else {
+            setSearch({...searchData, [name]: value});
+        }
+
+        setCurrentPage(1);
+
+    };
 
 
     return (
         <>
 
+            <div className="row">
+                <div className="col d-flex justify-content-start align-items-center text-center">
+                    <h1 className="mb-5" style={{fontSize: "50px"}}>Bienvenue sur nos annonces</h1>
+                </div>
+            </div>
+
+            <div className="form-group d-flex flex-row">
+                <select onChange={handleSelect} name="categorie" className="custom-select w-25 mx-1" id=""
+                        defaultValue="Catégories">
+                    <option disabled hidden>Catégories</option>
+                    <option>Tous</option>
+                    <option>Outillage</option>
+                    <option>Technologie</option>
+                    <option>Automobile</option>
+                </select>
+                <select onChange={handleSelect} name="region" className="custom-select w-25 mx-1" id=""
+                        defaultValue="Région">
+                    <option disabled hidden>Région</option>
+                    <option>Tous</option>
+                    <option>Ile-de-France</option>
+                    <option>Midy-Pyrénnées</option>
+                    <option>Alsace</option>
+                </select>
+                <input type="text" className="form-control mx-2" onChange={handleSearch} value={searchData.search}
+                       placeholder="Chercher une annonce ..."/>
+            </div>
             <div className="row">
                 {paginatedAnnonces.map(annonce => (
                     <div key={annonce.id} className="col-4">
@@ -55,8 +118,14 @@ const Annonces = () => {
                 ))}
             </div>
 
-            <Pagination currentPage={currentPage} itemsPerPage={itemsPerPage} Length={annoncesData.length}
-                        onPageChanged={handlePageChange}/>
+            {itemsPerPage < filteredAnnonces.length &&
+
+            <Pagination
+                currentPage={currentPage}
+                itemsPerPage={itemsPerPage}
+                Length={filteredAnnonces.length}
+                onPageChanged={handlePageChange}/>
+            }
 
         </>
     );

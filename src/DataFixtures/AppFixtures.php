@@ -46,10 +46,10 @@ class AppFixtures extends Fixture
             for ($a = 1; $a <= mt_rand(3, 20); $a++) {
                 $annonce = new Annonce();
 
-                $annonce->setTitre($faker->sentence())
-                    ->setIntro($faker->paragraph(2))
+                $annonce->setTitre($faker->paragraph(1))
+                    ->setIntro($faker->realText(170))
                     ->setDescription($faker->realText(550))
-                    ->setCoverImage("https://placehold.it/500x300")
+                    ->setCoverImage("https://placeimg.com/400/200/any"."?".mt_rand(0,879))
                     ->setPrix(mt_rand(10, 440))
                     ->setUser($user)
                     ->setCategorie($categories[mt_rand(0, count($categories) - 1)])
