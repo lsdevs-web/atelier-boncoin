@@ -16,17 +16,32 @@ const Pagination = ({currentPage, itemsPerPage, Length, onPageChanged}) => {
                         <ul className="pagination pagination-lg">
                             <li className={"page-item " + (currentPage === 1 && "disabled")}>
                                 <button className="page-link"
-                                        onClick={() => onPageChanged(currentPage - 1)}>&laquo;</button>
+                                        onClick={() => {
+                                            window.scrollTo(0, 0);
+                                            const timeoutID = setTimeout(() => {
+                                                onPageChanged(currentPage - 1);
+                                                clearTimeout(timeoutID);
+                                            }, 600);
+                                        }}>&laquo;</button>
                             </li>
                             {pages.map(page =>
                                 <li key={page} className={"page-item " + (currentPage === page && "active")}>
-                                    <button className="page-link" onClick={() => onPageChanged(page)}>{page}</button>
+                                    <button className="page-link" onClick={() => {
+                                        window.scrollTo(0, 0);
+                                        const timeoutID = setTimeout(() => {
+                                            onPageChanged(page);
+                                            clearTimeout(timeoutID);
+                                        }, 600);
+                                    }}>{page}</button>
                                 </li>
                             )}
                             <li className={"page-item " + (currentPage === pageCount && "disabled")}>
                                 <button className="page-link" onClick={() => {
                                     window.scrollTo(0, 0);
-                                    onPageChanged(currentPage + 1);
+                                    const timeoutID = setTimeout(() => {
+                                        onPageChanged(currentPage + 1);
+                                        clearTimeout(timeoutID);
+                                    }, 600);
                                 }}>&raquo;</button>
                             </li>
                         </ul>

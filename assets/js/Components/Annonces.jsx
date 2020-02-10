@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import "../../scss/Annonces.scss"
-import Axios from "axios";
 import Pagination from "./Services/Pagination";
+import API from "./Services/API";
 
 const Annonces = () => {
 
@@ -13,20 +13,27 @@ const Annonces = () => {
         search: ""
     });
 
+    // AJAX GET ANNONCES
+    const fetchAnnonce = async () => {
+        try {
+            const data = await API.findAll();
+            setAnnoncesData(data)
+        } catch(e) {
+            console.log(e.response);
+        }
+
+    };
+
+    // ComponentDidMount REQUEST
     useEffect(() => {
-        Axios.get("https://127.0.0.1:8000/api/annonces")
-            .then(response => response.data["hydra:member"])
-            .then(data => setAnnoncesData(data))
-            .catch(e => console.log(e.response));
+        fetchAnnonce();
     }, []);
 
 
+    // Gestion de la recherche
     const itemsPerPage = 9;
-    const handlePageChange = page => {
-        setCurrentPage(page)
-    };
 
-
+    // Filtrage des annonces pour la recherche
     const filteredAnnonces = annoncesData.filter(annonce =>
         (
             annonce.titre.toLowerCase().includes(searchData.search.toLowerCase())
@@ -38,7 +45,12 @@ const Annonces = () => {
         && annonce.region.toLowerCase().includes(searchData.region.toLowerCase())
     );
 
+    // Pagination des Annonces
     const paginatedAnnonces = Pagination.getData(filteredAnnonces, currentPage, itemsPerPage);
+
+    const handlePageChange = page => {
+        setCurrentPage(page)
+    };
 
     const handleSearch = (e) => {
         const value = e.target.value;
@@ -55,9 +67,7 @@ const Annonces = () => {
         } else {
             setSearch({...searchData, [name]: value});
         }
-
         setCurrentPage(1);
-
     };
 
 

@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1be778e5-4942-429b-b047-92bb72c890ed" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Components/Services/Pagination.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Services/Pagination.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFixtures/AppFixtures.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DoctrineExtensions/CurrentUserExtension.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/DoctrineExtensions/CurrentUserExtension.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +228,9 @@
       <workItem from="1581256571473" duration="9241000" />
       <workItem from="1581273110627" duration="1536000" />
       <workItem from="1581329404324" duration="1266000" />
-      <workItem from="1581335502380" duration="6100000" />
+      <workItem from="1581335502380" duration="6473000" />
+      <workItem from="1581343246657" duration="442000" />
+      <workItem from="1581352505201" duration="2641000" />
     </task>
     <servers />
   </component>
@@ -234,14 +238,22 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="0" y="27" width="1910" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1581354231457">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="0" y="27" width="1910" height="1053" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581354231457" />
+    <state x="693" y="311" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581354485060">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="693" y="311" width="524" height="484" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581354485060" />
     <state x="543" y="290" width="824" height="526" key="IDE.errors.dialog" timestamp="1580818613022">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="543" y="290" width="824" height="526" key="IDE.errors.dialog/0.27.1920.1053@0.27.1920.1053" timestamp="1580818613022" />
-    <state x="659" y="351" width="655" height="405" key="NewPhpClassDialog" timestamp="1581068756247">
+    <state x="659" y="351" width="655" height="405" key="NewPhpClassDialog" timestamp="1581354266637">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="659" y="351" width="655" height="405" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581068756247" />
+    <state x="659" y="351" width="655" height="405" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581354266637" />
     <state x="831" y="228" key="SettingsEditor" timestamp="1581273747544">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
@@ -250,9 +262,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1580840805240" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581341090402">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581354979192">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581341090402" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581354979192" />
   </component>
 </project>
