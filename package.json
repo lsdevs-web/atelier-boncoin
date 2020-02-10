@@ -17,6 +17,7 @@
     "dependencies": {
         "autoprefixer": "^9.7.4",
         "axios": "^0.19.2",
+        "jwt-decode": "^2.2.0",
         "node-sass": "^4.13.1",
         "postcss-loader": "^3.0.0",
         "react": "^16.12.0",

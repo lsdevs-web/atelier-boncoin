@@ -16,7 +16,7 @@ const Annonces = () => {
     // AJAX GET ANNONCES
     const fetchAnnonce = async () => {
         try {
-            const data = await API.findAll();
+            const data = await API.findAnnonces();
             setAnnoncesData(data)
         } catch(e) {
             console.log(e.response);
