@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom'
-import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, withRouter} from "react-router-dom";
 import "../scss/Dependencies.scss"
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
@@ -8,6 +8,7 @@ import Annonces from './Components/Annonces'
 import NotFound from "./Components/NotFound";
 import Login from "./Components/Login";
 import API from "./Components/Services/API";
+import AuthContext from "./Components/Context/AuthContext";
 
 API.setup();
 
@@ -15,28 +16,33 @@ const App = () => {
 
     const [isAuth, setIsAuth] = useState(API.isAuth());
 
+    const NavBarWithRouter = withRouter(NavBar);
 
     return (
-        <Router>
+        <AuthContext.Provider value={{
+            isAuth,
+            setIsAuth
+        }}>
 
-            <NavBar
-            isAuth={isAuth}
-            onLogout={setIsAuth}
-            />
+            <Router>
 
-            <main className="container pt-5">
-                <Switch>
+                <NavBarWithRouter/>
 
-                    <Route exact path="/login" render={(props) => <Login isAuth={isAuth} onLogin={setIsAuth}/>}/>
-                    <Route exact path="/annonces" component={Annonces}/>
-                    <Route exact path="/" component={Home}/>
-                    <Route path="*" component={NotFound}/>
+                <main className="container pt-5">
+                    <Switch>
 
-                </Switch>
-            </main>
+                        <Route exact path="/login" component={Login}/>
+                        <Route exact path="/annonces" component={Annonces}/>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="*" component={NotFound}/>
+
+                    </Switch>
+                </main>
 
 
-        </Router>
+            </Router>
+        </AuthContext.Provider>
+
 
     );
 };

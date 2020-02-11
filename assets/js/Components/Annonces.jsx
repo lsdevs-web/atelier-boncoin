@@ -18,7 +18,7 @@ const Annonces = () => {
         try {
             const data = await API.findAnnonces();
             setAnnoncesData(data)
-        } catch(e) {
+        } catch (e) {
             console.log(e.response);
         }
 

@@ -1,7 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import API from "./Services/API";
+import AuthContext from "./Context/AuthContext";
 
 const Login = (props) => {
+
+    const {setIsAuth} = useContext(AuthContext);
 
     const [credentials, setCredentials] = useState({
         username: "",
@@ -21,7 +24,8 @@ const Login = (props) => {
         try {
             await API.authentication(credentials);
             setError("");
-            props.onLogin(true)
+            setIsAuth(true);
+            props.history.replace("/");
         } catch (e) {
             console.log(e.response);
             setError("Mauvais identifiant ou mot de passe")

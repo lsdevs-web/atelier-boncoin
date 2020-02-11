@@ -1,12 +1,16 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {NavLink} from "react-router-dom";
 import API from "./Services/API";
+import AuthContext from "./Context/AuthContext";
 
 const NavBar = (props) => {
 
+    const {isAuth, setIsAuth} = useContext(AuthContext);
+
     const handleLogout = () => {
         API.logout();
-        props.onLogout(false);
+        setIsAuth(false);
+        props.history.push("/login");
     };
 
     return (
@@ -22,26 +26,22 @@ const NavBar = (props) => {
 
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav mr-auto">
-                        <form className="form-inline my-2 my-lg-0 ml-2">
-                            <input className="form-control mr-sm-2" type="text" placeholder="Search"/>
-                            <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-                        </form>
                         <li className="btn btn-dark ml-4 btn-sm my-2 my-sm-0">
                             <NavLink className="nav-link" to="/annonces">Déposer une annonce</NavLink>
                         </li>
                     </ul>
                     <ul className="navbar-nav">
-                        {!props.isAuth &&
-                            <>
-                                <button className="btn btn-dark btn-sm mx-2">
-                                    <NavLink className="nav-link" to="/register">Inscription</NavLink>
-                                </button>
-                                <li className="btn btn-dark btn-sm mx-2">
-                                    <NavLink className="nav-link" to="/login">Connexion</NavLink>
-                                </li>
-                            </>
+                        {!isAuth &&
+                        <>
+                            <button className="btn btn-dark btn-sm mx-2">
+                                <NavLink className="nav-link" to="/register">Inscription</NavLink>
+                            </button>
+                            <li className="btn btn-dark btn-sm mx-2">
+                                <NavLink className="nav-link" to="/login">Connexion</NavLink>
+                            </li>
+                        </>
                         }
-                        {props.isAuth &&
+                        {isAuth &&
                         <button onClick={handleLogout} className="btn btn-dark btn-sm mx-2">
                             <NavLink className="nav-link" to="/">Déconnexion</NavLink>
                         </button>}
