@@ -1,6 +1,7 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext, useState} from 'react';
 import API from "./Services/API";
 import AuthContext from "./Context/AuthContext";
+import Field from "./Forms/Field";
 
 const Login = (props) => {
 
@@ -40,21 +41,24 @@ const Login = (props) => {
                     <div className="card-body">
                         <h2 style={{fontSize: "50px"}} className="card-title">Connexion au site</h2>
                         <form onSubmit={handleSubmit}>
-                            <div className="form-group">
-                                <label htmlFor="_username" style={{fontSize: "20px"}} className="my-2">Email</label>
-                                <input onChange={handleChange} value={credentials.username} type="email"
-                                       className={"form-control " + (error && "is-invalid")} placeholder="Votre email"
-                                       name="username"
-
-                                />
-                                {error && <p className="invalid-feedback">{error}</p>}
-                            </div>
-                            <div className="form-group">
-                                <label htmlFor="_password" style={{fontSize: "20px"}} className="my-2">Mot de
-                                    passe</label>
-                                <input onChange={handleChange} value={credentials.password} type="password"
-                                       className="form-control" placeholder="Votre mot de passe" name="password"/>
-                            </div>
+                            <Field
+                                name="username"
+                                label="Email"
+                                onChange={handleChange}
+                                value={credentials.username}
+                                type="email"
+                                error={error}
+                                placeholder="Votre email"
+                            />
+                            <Field
+                                name="password"
+                                type="password"
+                                onChange={handleChange}
+                                value={credentials.password}
+                                placeholder="Votre mot de passe"
+                                error={error}
+                                label="Mot de passe"
+                            />
                             <button type="submit" className="btn btn-primary">Connexion</button>
                         </form>
                     </div>

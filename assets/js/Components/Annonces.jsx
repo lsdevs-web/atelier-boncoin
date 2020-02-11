@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "../../scss/Annonces.scss"
 import Pagination from "./Services/Pagination";
 import API from "./Services/API";
+import Select from "./Forms/Select";
 
 const Annonces = () => {
 
@@ -81,22 +82,18 @@ const Annonces = () => {
             </div>
 
             <div className="form-group d-flex flex-row">
-                <select onChange={handleSelect} name="categorie" className="custom-select w-25 mx-1" id=""
-                        defaultValue="Catégories">
-                    <option disabled hidden>Catégories</option>
+                <Select Handle={handleSelect} name="categorie" defValue="Catégories" title="Catégories">
                     <option>Tous</option>
                     <option>Outillage</option>
                     <option>Technologie</option>
                     <option>Automobile</option>
-                </select>
-                <select onChange={handleSelect} name="region" className="custom-select w-25 mx-1" id=""
-                        defaultValue="Région">
-                    <option disabled hidden>Région</option>
+                </Select>
+                <Select Handle={handleSelect} name="region" defValue="Régions" title="Régions">
                     <option>Tous</option>
                     <option>Ile-de-France</option>
                     <option>Midy-Pyrénnées</option>
                     <option>Alsace</option>
-                </select>
+                </Select>
                 <input type="text" className="form-control mx-2" onChange={handleSearch} value={searchData.search}
                        placeholder="Chercher une annonce ..."/>
             </div>

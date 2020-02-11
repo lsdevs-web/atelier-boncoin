@@ -27,7 +27,7 @@ const NavBar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarColor01">
                     <ul className="navbar-nav mr-auto">
                         <li className="btn btn-dark ml-4 btn-sm my-2 my-sm-0">
-                            <NavLink className="nav-link" to="/annonces">Déposer une annonce</NavLink>
+                            <NavLink className="nav-link" to="/annonces/new">Déposer une annonce</NavLink>
                         </li>
                     </ul>
                     <ul className="navbar-nav">

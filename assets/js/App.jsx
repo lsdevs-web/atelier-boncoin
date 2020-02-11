@@ -9,6 +9,8 @@ import NotFound from "./Components/NotFound";
 import Login from "./Components/Login";
 import API from "./Components/Services/API";
 import AuthContext from "./Components/Context/AuthContext";
+import NewAnnonce from "./Components/NewAnnonce";
+import PrivateRoute from "./Components/Services/PrivateRoute";
 
 API.setup();
 
@@ -32,6 +34,7 @@ const App = () => {
                     <Switch>
 
                         <Route exact path="/login" component={Login}/>
+                        <PrivateRoute exact path="/annonces/:id" component={NewAnnonce}/>
                         <Route exact path="/annonces" component={Annonces}/>
                         <Route exact path="/" component={Home}/>
                         <Route path="*" component={NotFound}/>

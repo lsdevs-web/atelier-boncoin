@@ -38,6 +38,7 @@ class AnnonceUserSubscriber implements EventSubscriberInterface
 
         if ($annonce instanceof Annonce && $method === "POST") {
             $annonce->setUser($user);
+            $annonce->setPostedAt(new \DateTime());
         }
 
 

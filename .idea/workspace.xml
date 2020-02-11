@@ -5,8 +5,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/Components/Context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Context/AuthContext.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Components/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/Components/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DoctrineExtensions/CurrentUserExtension.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Entity/Annonce.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Annonce.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Events/AnnonceUserSubscriber.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Events/AnnonceUserSubscriber.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +191,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -230,7 +234,14 @@
       <workItem from="1581343246657" duration="442000" />
       <workItem from="1581352505201" duration="2894000" />
       <workItem from="1581360296709" duration="5958000" />
-      <workItem from="1581414901730" duration="3083000" />
+      <workItem from="1581414901730" duration="3139000" />
+      <workItem from="1581418095207" duration="37000" />
+      <workItem from="1581427214160" duration="403000" />
+      <workItem from="1581427777655" duration="79000" />
+      <workItem from="1581428163340" duration="29000" />
+      <workItem from="1581428225039" duration="51000" />
+      <workItem from="1581428299405" duration="2045000" />
+      <workItem from="1581434359695" duration="5001000" />
     </task>
     <servers />
   </component>
@@ -254,17 +265,21 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="659" y="351" width="655" height="405" key="NewPhpClassDialog/0.27.1920.1053@0.27.1920.1053" timestamp="1581354266637" />
-    <state x="831" y="228" key="SettingsEditor" timestamp="1581273747544">
+    <state x="478" y="212" width="953" height="683" key="Registry" timestamp="1581428520314">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="831" y="228" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1581273747544" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1580840805240">
+    <state x="478" y="212" width="953" height="683" key="Registry/0.27.1920.1053@0.27.1920.1053" timestamp="1581428520314" />
+    <state x="831" y="228" key="SettingsEditor" timestamp="1581428275482">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1580840805240" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581417636846">
+    <state x="831" y="228" key="SettingsEditor/0.27.1920.1053@0.27.1920.1053" timestamp="1581428275482" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1581438453789">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581417636846" />
+    <state width="498" height="446" key="SwitcherDM/0.27.1920.1053@0.27.1920.1053" timestamp="1581438453789" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1581437974414">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1581437974414" />
   </component>
 </project>
