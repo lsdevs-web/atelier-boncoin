@@ -11,7 +11,7 @@ const ImgSubForm = ({url, errorUrl, errorCaption, handle, caption, num, deleteIm
                 <div className="icons d-flex justify-content-between mx-2 my-2">
                     <h2 className="h2">Image n°{num + 1}</h2>
                     <div className="icons-container d-flex">
-                        {num < 2 &&
+                        {num < 1 &&
                             <>
                                 <div className="icon" onClick={() => deleteImg(num)}>
                                     <FontAwesomeIcon icon={faTrash} color="red"

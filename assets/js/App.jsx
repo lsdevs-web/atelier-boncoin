@@ -11,6 +11,7 @@ import API from "./Components/Services/API";
 import AuthContext from "./Components/Context/AuthContext";
 import NewAnnonce from "./Components/NewAnnonce";
 import PrivateRoute from "./Components/Services/PrivateRoute";
+import AnnonceShow from "./Components/AnnonceShow";
 
 API.setup();
 
@@ -35,7 +36,8 @@ const App = () => {
                     <Switch>
 
                         <Route exact path="/login" component={Login}/>
-                        <PrivateRoute exact path="/annonces/:id" component={NewAnnonce}/>
+                        <PrivateRoute exact path="/annonces/new" component={NewAnnonce}/>
+                        <Route exact path="/annonces/:id" component={AnnonceShow}/>
                         <Route exact path="/annonces" component={Annonces}/>
                         <Route exact path="/" component={Home}/>
                         <Route path="*" component={NotFound}/>

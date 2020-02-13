@@ -4,7 +4,7 @@ import Pagination from "./Services/Pagination";
 import API from "./Services/API";
 import Select from "./Forms/Select";
 
-const Annonces = () => {
+const Annonces = ({history}) => {
 
     const [annoncesData, setAnnoncesData] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -71,6 +71,10 @@ const Annonces = () => {
         setCurrentPage(1);
     };
 
+    const handleClick = (id) => {
+        history.push(`/annonces/${id}`);
+    };
+
 
     return (
         <>
@@ -100,13 +104,13 @@ const Annonces = () => {
             <div className="row">
                 {paginatedAnnonces.map(annonce => (
                     <div key={annonce.id} className="col-4">
-                        <div className="card mb-3">
+                        <div style={{cursor: "pointer"}} className="card mb-3" onClick={() => handleClick(annonce.id)}>
                             <h3 className="card-header"
                                 style={{minHeight: "70px", lineHeight: "1.4"}}>{annonce.titre}</h3>
                             <ul className="list-group list-group-flush">
                                 <li className="list-group-item">{annonce.user.prenom} {annonce.user.nom}</li>
                             </ul>
-                            <img src={annonce.coverImage} alt=""/>
+                            <img src={annonce.coverImage} style={{maxHeight: "300px"}} alt=""/>
                             <div className="card-body">
                                 <p className="card-text">{annonce.intro}</p>
                             </div>

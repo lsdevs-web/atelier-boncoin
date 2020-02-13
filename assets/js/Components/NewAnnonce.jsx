@@ -4,7 +4,7 @@ import Select from "./Forms/Select";
 import ImgSubForm from "./Forms/ImgSubForm";
 import Axios from "axios";
 
-const NewAnnonce = () => {
+const NewAnnonce = ({match}) => {
 
     const [imgNumber, setImgNumber] = useState(0);
 
@@ -50,7 +50,7 @@ const NewAnnonce = () => {
     const handleSubmit = async e => {
         e.preventDefault();
         try {
-            const response = await Axios.post("https://127.0.0.1:8000/api/annonces", annonce)
+            const response = await Axios.post("https://127.0.0.1:8000/api/annonces", annonce);
             console.log(response);
 
         } catch (e) {
@@ -62,8 +62,6 @@ const NewAnnonce = () => {
                     apiErrors[violation.propertyPath] = violation.message
                 });
                 setError(apiErrors);
-
-                console.log(e.response.data.violations);
             }
 
         }

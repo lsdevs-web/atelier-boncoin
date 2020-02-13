@@ -25,28 +25,17 @@ const NavBar = (props) => {
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarColor01">
-                    <ul className="navbar-nav mr-auto">
-                        <li className="btn btn-dark ml-4 btn-sm my-2 my-sm-0">
-                            <NavLink className="nav-link" to="/annonces/new">Déposer une annonce</NavLink>
-                        </li>
+                    <ul className="mr-auto">
+                            <NavLink className="btn btn-dark my-sm-0 nav-link" to="/annonces/new">Déposer une annonce</NavLink>
                     </ul>
-                    <ul className="navbar-nav">
                         {!isAuth &&
                         <>
-                            <button className="btn btn-dark btn-sm mx-2">
-                                <NavLink className="nav-link" to="/register">Inscription</NavLink>
-                            </button>
-                            <li className="btn btn-dark btn-sm mx-2">
-                                <NavLink className="nav-link" to="/login">Connexion</NavLink>
-                            </li>
+                                <NavLink className="btn btn-dark mx-2 nav-link" to="/register">Inscription</NavLink>
+                                <NavLink className="btn btn-dark mx-2 nav-link" to="/login">Connexion</NavLink>
                         </>
                         }
                         {isAuth &&
-                        <button onClick={handleLogout} className="btn btn-dark btn-sm mx-2">
-                            <NavLink className="nav-link" to="/">Déconnexion</NavLink>
-                        </button>}
-
-                    </ul>
+                            <NavLink onClick={handleLogout} className="btn btn-dark mx-2 nav-link" to="/" >Déconnexion</NavLink>}
                 </div>
             </nav>
         </>
