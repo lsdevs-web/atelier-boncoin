@@ -25,7 +25,7 @@ class Image
      * @Groups({"annonces_read", "users_read"})
      * @Assert\Type(type="string", message="L'url doit être du texte")
      * @Assert\NotBlank(message="L'url de l'image ne peut pas être vide")
-     * @Assert\NotNull(message="L'url de l'image ne peut pas être nulle")
+     * @Assert\Url(message="Veuillez entrez un url valide")
      */
     private $url;
 

@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Field = ({name, value, type = "text", error = "", placeholder, label, onChange, width=""}) => {
+const Field = ({name, value, type = "text", error = "", placeholder, label, onChange}) => {
     return (
         <div className={"form-group"}>
             <label htmlFor={name}
                    style={{fontSize: "20px"}}
-                   className="my-2">
+                   className="my-2 mb-2">
                 {label}
             </label>
 
@@ -15,7 +15,7 @@ const Field = ({name, value, type = "text", error = "", placeholder, label, onCh
                    className={"form-control " + (error && "is-invalid")}
                    placeholder={placeholder}
                    name={name}
-                   required
+                   // required
             />
 
             {error && <p className="invalid-feedback">{error}</p>}

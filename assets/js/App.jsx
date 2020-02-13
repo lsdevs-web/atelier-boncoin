@@ -30,6 +30,7 @@ const App = () => {
 
                 <NavBarWithRouter/>
 
+
                 <main className="container pt-5">
                     <Switch>
 

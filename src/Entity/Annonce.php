@@ -52,7 +52,7 @@ class Annonce
      * @ORM\Column(type="text")
      * @Groups({"annonces_read", "users_read"})
      * @Assert\NotBlank(message="L'annonce doit avoir une description")
-     * @Assert\Length(min="55", minMessage="L'annonce doit faire plus de 10 caractères", max="255", maxMessage="La description ne peut pas faire plus de 255 caractères")
+     * @Assert\Length(min="55", minMessage="La description doit faire plus de 55 caractères", max="255", maxMessage="La description ne peut pas faire plus de 255 caractères")
      */
     private $description;
 
@@ -83,13 +83,14 @@ class Annonce
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
      * @Assert\NotBlank(message="L'annonce doit avoir une image de couverture")
-     * @Assert\Type(type="string", message="L'image de couverture doit être une url")
+     * @Assert\Url(message="Veuillez entrez une url valide")
      */
     private $coverImage;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Image", mappedBy="annonce", orphanRemoval=true, cascade={"persist"})
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\Valid()
      */
     private $images;
 
@@ -104,6 +105,7 @@ class Annonce
     /**
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
+     * @Assert\NotBlank(message="La catégorie ne peut pas être vide")
      * @Assert\NotNull(message="L'annonce doit avoir une catégories")
      * @Assert\Type(type="string", message="La catégorie doit être du texte")
      */
@@ -113,6 +115,7 @@ class Annonce
      * @ORM\Column(type="string", length=255)
      * @Groups({"annonces_read", "users_read"})
      * @Assert\NotNull(message="L'annonce doit avoir une région")
+     * @Assert\NotBlank(message="La région ne peut pas être vide")
      * @Assert\Type(type="string", message="La région doit être du texte")
      */
     private $region;

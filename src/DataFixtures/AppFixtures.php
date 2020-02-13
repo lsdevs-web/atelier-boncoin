@@ -64,17 +64,6 @@ class AppFixtures extends Fixture
                     $manager->persist($image);
                 }
 
-                for ($i = 1; $i <= mt_rand(0, 2); $i++) {
-                    $message = new ContactMessage();
-                    $message->setUser($user)
-                        ->setAnnonce($annonce)
-                        ->setTitle($faker->sentence('5'))
-                        ->setContent($faker->realText());
-                    $annonce->addContactMessage($message);
-
-                    $manager->persist($message);
-                }
-
                 $manager->persist($annonce);
 
             }
