@@ -9,7 +9,7 @@ const ImgSubForm = ({url, errorUrl, errorCaption, handle, caption, num, deleteIm
         <div className="card mt-3 mb-4">
             <div className="card-body">
                 <div className="icons d-flex justify-content-between mx-2 my-2">
-                    <h2 className="h2">Image n°{num + 1}</h2>
+                    <h2 className="h4">Image n°{num + 1}</h2>
                     <div className="icons-container d-flex">
                         {num < 1 &&
                             <>

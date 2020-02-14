@@ -32,7 +32,7 @@ const App = () => {
                 <NavBarWithRouter/>
 
 
-                <main className="container pt-5">
+                <main className="container pt-4">
                     <Switch>
 
                         <Route exact path="/login" component={Login}/>

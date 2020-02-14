@@ -13,7 +13,7 @@ const Pagination = ({currentPage, itemsPerPage, Length, onPageChanged}) => {
             <div className="row">
                 <div className="col d-flex justify-content-center align-items-center my-3">
                     <div>
-                        <ul className="pagination pagination-lg">
+                        <ul className="pagination pagination">
                             <li className={"page-item " + (currentPage === 1 && "disabled")}>
                                 <button className="page-link"
                                         onClick={() => {

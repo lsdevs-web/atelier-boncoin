@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Field from "./Forms/Field";
 import Select from "./Forms/Select";
 import ImgSubForm from "./Forms/ImgSubForm";
 import Axios from "axios";
 
-const NewAnnonce = ({match}) => {
+const NewAnnonce = () => {
 
     const [imgNumber, setImgNumber] = useState(0);
 
@@ -15,7 +15,7 @@ const NewAnnonce = ({match}) => {
         region: "",
         description: "",
         coverImage: "",
-        images: [{url: "", caption:""}],
+        images: [{url: "", caption: ""}],
         prix: null
     });
 
@@ -75,7 +75,7 @@ const NewAnnonce = ({match}) => {
     const handleUrl = (e, id) => {
         const value = e.target.value;
 
-        setAnnonce({...annonce},  annonce.images[id].url = value)
+        setAnnonce({...annonce}, annonce.images[id].url = value)
     };
 
 
@@ -89,69 +89,79 @@ const NewAnnonce = ({match}) => {
 
     return (
         <>
-            <h1 className="h1">Déposer votre annonce</h1>
+            <h1 className="h3">Déposer votre annonce</h1>
             <form onSubmit={handleSubmit} action="">
 
-                <Field label="Titre de l'annonce" value={annonce.titre}
-                       onChange={handleChange}
-                       placeholder="Le titre de votre annonce" name="titre"
-                       error={error.titre}
-                />
-                <Field label="Introduction de l'annonce" value={annonce.intro}
-                       placeholder="L'introduction de votre annonce" name="intro"
-                       onChange={handleChange}
-                       error={error.intro}
-                />
+                <div className="card">
+                    <div className="card-body">
+                        <Field label="Titre de l'annonce" value={annonce.titre}
+                               onChange={handleChange}
+                               placeholder="Le titre de votre annonce" name="titre"
+                               error={error.titre}
+                        />
+                        <Field label="Introduction de l'annonce" value={annonce.intro}
+                               placeholder="L'introduction de votre annonce" name="intro"
+                               onChange={handleChange}
+                               error={error.intro}
+                        />
 
-                <div className="d-flex flex-row mt-4 mb-3">
-                    <div className="select-container" style={{width: "33%", margin: "0 4px 0 4px"}}>
-                        <Select name="categorie" title="Catégorie"
-                                Handle={handleChange} defValue="Catégorie" error={error.categorie}>
-                            <option>Outillage</option>
-                            <option>Technologie</option>
-                            <option>Automobile</option>
-                        </Select>
-                    </div>
-                    <div className="select-container" style={{width: "33%", margin: "0 4px 0 4px"}} >
-                        <Select name="region" title="Région"
-                                Handle={handleChange} defValue="Région" error={error.region}>
-                            <option>Ile-de-France</option>
-                            <option>Midy-Pyrénnées</option>
-                            <option>Alsace</option>
-                        </Select>
-                    </div>
+                        <div className="d-flex flex-row mt-4 mb-3">
+                            <div className="select-container" style={{width: "33%", margin: "0 4px 0 4px"}}>
+                                <Select name="categorie" title="Catégorie"
+                                        Handle={handleChange} defValue="Catégorie" error={error.categorie}>
+                                    <option>Outillage</option>
+                                    <option>Technologie</option>
+                                    <option>Automobile</option>
+                                </Select>
+                            </div>
+                            <div className="select-container" style={{width: "33%", margin: "0 4px 0 4px"}}>
+                                <Select name="region" title="Région"
+                                        Handle={handleChange} defValue="Région" error={error.region}>
+                                    <option>Ile-de-France</option>
+                                    <option>Midy-Pyrénnées</option>
+                                    <option>Alsace</option>
+                                </Select>
+                            </div>
 
-                    <div className="input-container" style={{width: "33%", margin: "0 4px 0 4px"}}>
-                        <div className="input-row d-flex flex-row">
-                            <input type="number" className={"form-control " + (error.prix && "is-invalid")} name="prix" placeholder="Votre prix"
-                                   onChange={handleChange}
-                            />
-                            <span style={{marginTop: "10px", fontSize: "20px", fontWeight: "bold", marginLeft: "5px"}}>€</span>
+                            <div className="input-container" style={{width: "33%", margin: "0 4px 0 4px"}}>
+                                <div className="input-row d-flex flex-row">
+                                    <input type="number" className={"form-control " + (error.prix && "is-invalid")} name="prix"
+                                           placeholder="Votre prix"
+                                           onChange={handleChange}
+                                    />
+                                    <span style={{
+                                        marginTop: "10px",
+                                        fontSize: "20px",
+                                        fontWeight: "bold",
+                                        marginLeft: "5px"
+                                    }}>€</span>
+                                </div>
+                                {error.prix && <p className="invalid-feedback">{error.prix}</p>}
+
+                            </div>
+
                         </div>
-                        {error.prix && <p className="invalid-feedback">{error.prix}</p>}
 
+                        <Field
+                            label="Url de l'image de couverture" value={annonce.coverImage}
+                            onChange={handleChange}
+                            placeholder="L'url de l'image de couverture de votre annonce" name="coverImage"
+                            error={error.coverImage}
+                        />
+                        <div className="form-group">
+
+                            <label className="my-2" style={{fontSize: "20px"}} htmlFor="description">Description de votre
+                                annonce</label>
+                            <textarea style={{maxHeight: "200px"}} placeholder="Décrivez votre annonce"
+                                      className={"form-control " + (error.description && "is-invalid")}
+                                      onChange={handleChange}
+                                      name="description" id="" cols="30" rows="10"/>
+                            {error.description && <p className="invalid-feedback">{error.description}</p>}
+                        </div>
                     </div>
-
-                </div>
-
-                <Field
-                    label="Url de l'image de couverture" value={annonce.coverImage}
-                    onChange={handleChange}
-                    placeholder="L'url de l'image de couverture de votre annonce" name="coverImage"
-                    error={error.coverImage}
-                />
-                <div className="form-group">
-
-                    <label className="my-2" style={{fontSize: "20px"}} htmlFor="description">Description de votre
-                        annonce</label>
-                    <textarea style={{maxHeight: "200px"}} placeholder="Décrivez votre annonce" className={"form-control " + (error.description && "is-invalid")}
-                              onChange={handleChange}
-                              name="description" id="" cols="30" rows="10"/>
-                    {error.description && <p className="invalid-feedback">{error.description}</p>}
                 </div>
 
 
-                <h1 id="delete_scroll" className="h1 mt-3">Ajouter des images</h1>
 
                 {annonce.images.map((image, id) => {
 
@@ -167,7 +177,10 @@ const NewAnnonce = ({match}) => {
                 })}
 
 
-                <button className="btn btn-dark">Créer l'annonce</button>
+                <div className="row d-flex justify-content-end">
+
+                    <button  className="btn btn-dark btn-lg mb-3 mr-3">Créer l'annonce</button>
+                </div>
 
 
             </form>

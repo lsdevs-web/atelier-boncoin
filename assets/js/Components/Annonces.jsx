@@ -81,7 +81,7 @@ const Annonces = ({history}) => {
 
             <div className="row">
                 <div className="col d-flex justify-content-start align-items-center text-center">
-                    <h1 className="mb-5" style={{fontSize: "50px"}}>Bienvenue sur nos annonces</h1>
+                    <h1 className="h3 mb-2">Bienvenue sur nos annonces</h1>
                 </div>
             </div>
 
