@@ -11,6 +11,7 @@ use DateTimeInterface;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -29,6 +30,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  * @ApiFilter(SearchFilter::class, properties={"titre":"partial", "prix"})
  * @ApiFilter(OrderFilter::class)
+ * @UniqueEntity("titre")
  */
 class Annonce
 {
@@ -52,7 +54,7 @@ class Annonce
      * @ORM\Column(type="text")
      * @Groups({"annonces_read", "users_read"})
      * @Assert\NotBlank(message="L'annonce doit avoir une description")
-     * @Assert\Length(min="55", minMessage="La description doit faire plus de 55 caractères", max="255", maxMessage="La description ne peut pas faire plus de 255 caractères")
+     * @Assert\Length(min="55", minMessage="La description doit faire plus de 55 caractères", max="555", maxMessage="La description ne peut pas faire plus de 555 caractères")
      */
     private $description;
 

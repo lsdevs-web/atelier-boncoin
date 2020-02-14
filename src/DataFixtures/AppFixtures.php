@@ -38,7 +38,6 @@ class AppFixtures extends Fixture
             $user->setEmail($faker->email)
                 ->setNom($faker->lastName)
                 ->setPrenom($faker->firstName)
-                ->setRoles(['ROLE_USER'])
                 ->setPassword($hash)
                 ->setPhone($faker->phoneNumber);
 
@@ -49,7 +48,7 @@ class AppFixtures extends Fixture
                 $annonce->setTitre($faker->paragraph(1))
                     ->setIntro($faker->realText(170))
                     ->setDescription($faker->realText(550))
-                    ->setCoverImage("https://picsum.photos/200/300" . "?" . mt_rand(100, 1000))
+                    ->setCoverImage("https://picsum.photos/400/200" . "?" . mt_rand(1, 100))
                     ->setPrix(mt_rand(10, 440))
                     ->setUser($user)
                     ->setCategorie($categories[mt_rand(0, count($categories) - 1)])
@@ -60,7 +59,7 @@ class AppFixtures extends Fixture
                     $image = new Image();
                     $image->setAnnonce($annonce)
                         ->setCaption($faker->paragraph(1))
-                        ->setUrl($faker->imageUrl());
+                        ->setUrl("https://picsum.photos/400/200" . "?" . mt_rand(1, 100));
                     $manager->persist($image);
                 }
 

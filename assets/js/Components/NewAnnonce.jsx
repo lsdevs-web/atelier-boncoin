@@ -4,7 +4,7 @@ import Select from "./Forms/Select";
 import ImgSubForm from "./Forms/ImgSubForm";
 import Axios from "axios";
 
-const NewAnnonce = () => {
+const NewAnnonce = ({history}) => {
 
     const [imgNumber, setImgNumber] = useState(0);
 
@@ -51,7 +51,8 @@ const NewAnnonce = () => {
         e.preventDefault();
         try {
             const response = await Axios.post("https://127.0.0.1:8000/api/annonces", annonce);
-            console.log(response);
+            history.replace(`/annonces/${response.data.id}`);
+
 
         } catch (e) {
 
