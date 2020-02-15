@@ -3,7 +3,6 @@
 namespace App\DataFixtures;
 
 use App\Entity\Annonce;
-use App\Entity\ContactMessage;
 use App\Entity\Image;
 use App\Entity\User;
 use DateTime;
@@ -41,7 +40,6 @@ class AppFixtures extends Fixture
                 ->setPassword($hash)
                 ->setPhone($faker->phoneNumber);
 
-
             for ($a = 1; $a <= mt_rand(3, 20); $a++) {
                 $annonce = new Annonce();
 
@@ -67,11 +65,9 @@ class AppFixtures extends Fixture
 
             }
 
-
             $manager->persist($user);
 
         }
-
 
         $manager->flush();
     }

@@ -53,7 +53,5 @@ class OnlyConnectedUserExtension implements QueryCollectionExtensionInterface, Q
             $queryBuilder->andWhere("$rootAlias = :user");
             $queryBuilder->setParameter("user", $user);
         }
-
     }
-
 }

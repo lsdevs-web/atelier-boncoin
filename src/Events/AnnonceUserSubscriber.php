@@ -6,11 +6,11 @@ namespace App\Events;
 
 use ApiPlatform\Core\EventListener\EventPriorities;
 use App\Entity\Annonce;
+use DateTime;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpKernel\Event\ViewEvent;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Symfony\Component\Security\Core\Security;
-use function Symfony\Component\String\u;
 
 class AnnonceUserSubscriber implements EventSubscriberInterface
 {
@@ -38,9 +38,8 @@ class AnnonceUserSubscriber implements EventSubscriberInterface
 
         if ($annonce instanceof Annonce && $method === "POST") {
             $annonce->setUser($user);
-            $annonce->setPostedAt(new \DateTime());
+            $annonce->setPostedAt(new DateTime());
         }
-
 
 
     }

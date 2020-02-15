@@ -8,11 +8,10 @@ use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
@@ -83,7 +82,7 @@ class User implements UserInterface
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Assert\Regex(pattern="/^\(0\)[0-9]*$", message="Le numéro n'est pas au bon format")
+     * @Assert\Regex(pattern="#^(0|\+33)[1-9]([-. ]?[0-9]{2}){4}$#", message="Le numéro n'est pas au bon format")
      * @Assert\NotBlank(message="Le numéro de téléphone ne peut pas être nul")
      * @Groups({"users_read", "annonces_read"})
      */
@@ -118,7 +117,7 @@ class User implements UserInterface
      */
     public function getUsername(): string
     {
-        return (string)$this->email;
+        return (string) $this->email;
     }
 
     /**
@@ -145,7 +144,7 @@ class User implements UserInterface
      */
     public function getPassword(): string
     {
-        return (string)$this->password;
+        return (string) $this->password;
     }
 
     public function setPassword(string $password): self
