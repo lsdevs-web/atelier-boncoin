@@ -23,7 +23,7 @@ const AnnonceShow = ({match, history}) => {
 
     const fetchAnnonce = async id => {
         try {
-            const data = await Axios.get("https://upper-agency.fr/api/annonces/" + id);
+            const data = await Axios.get("https://upper-agency.fr/atelier-boncoin/api/annonces/" + id);
             setAnnonceData(data.data);
             setShow(true);
         } catch (e) {
