@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1be778e5-4942-429b-b047-92bb72c890ed" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/Components/Register.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Components/AnnonceShow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/AnnonceShow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Annonces.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Components/Forms/ImgSubForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Forms/ImgSubForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Components/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Components/NewAnnonce.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/Components/NewAnnonce.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/Register.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/scss/Home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/scss/Home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +270,7 @@
       <workItem from="1582016260453" duration="540000" />
       <workItem from="1582273703360" duration="2651000" />
       <workItem from="1582276658863" duration="27000" />
-      <workItem from="1582290299444" duration="916000" />
+      <workItem from="1582290299444" duration="1168000" />
     </task>
     <servers />
   </component>
@@ -335,9 +326,9 @@
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="598" y="126" width="746" height="855" key="find.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1582274132115" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1582290833314">
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1582291339974">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1582290833314" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1582291339974" />
   </component>
 </project>
