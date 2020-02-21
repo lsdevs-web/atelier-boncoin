@@ -10,12 +10,26 @@ const Home = ({history}) => {
 
     const handleClickIDF = () => {
         history.replace("/annonces", 'Ile-de-France');
+	    const timeoutID = setTimeout(() => {
+		    history.location.state = "";
+		    clearTimeout(timeoutID);
+	    },800);
     };
     const handleClickALS = () => {
         history.replace("/annonces", 'Alsace');
+	    const timeoutID = setTimeout(() => {
+                    history.location.state = "";
+                    clearTimeout(timeoutID);
+            },800);
+
     };
     const handleClickMDP = () => {
         history.replace("/annonces", 'Midy-Pyrénnées');
+	    const timeoutID = setTimeout(() => {
+                    history.location.state = "";
+                    clearTimeout(timeoutID);
+            },800);
+
     };
 
     return (

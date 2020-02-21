@@ -41,11 +41,10 @@ const Annonces = ({history}) => {
             annonce.titre.toLowerCase().includes(searchData.search.toLowerCase())
             || annonce.user.prenom.toLowerCase().includes(searchData.search.toLowerCase())
             || annonce.user.nom.toLowerCase().includes(searchData.search.toLowerCase())
-
         )
         && annonce.categorie.toLowerCase().includes(searchData.categorie.toLowerCase())
         && annonce.region.toLowerCase().includes(searchData.region.toLowerCase())
-        && annonce.region.toLowerCase().includes(history.location.state.toLowerCase())
+	&& annonce.region.toLowerCase().includes(history.location.state.toLowerCase())
     );
 
     // Pagination des Annonces

@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="home")
+     * @Route("/{reactRouting}", name="home",  requirements={"reactRouting"="^(?!api).+"}, defaults={"reactRouting": true})
      */
     public function index(): Response
     {
