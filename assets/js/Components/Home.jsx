@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import '../../scss/Home.scss';
-import France from '../../img/france_regions.svg'
+// import France from '../../img/france_regions.svg'
 
 const Home = ({history}) => {
 

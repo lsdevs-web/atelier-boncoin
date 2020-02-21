@@ -3,12 +3,12 @@ import JWTDecode from 'jwt-decode';
 
 
 const findAnnonces = () => {
-    return Axios.get("https://127.0.0.1:8000/api/annonces")
+    return Axios.get("https://upper-agency.fr/api/annonces")
         .then(response => response.data["hydra:member"])
 };
 
 const authentication = credentials => {
-    return Axios.post("https://127.0.0.1:8000/api/login_check", credentials)
+    return Axios.post("https://upper-agency.fr/api/login_check", credentials)
         .then(response => response.data.token)
         .then(token => {
             let t = token;

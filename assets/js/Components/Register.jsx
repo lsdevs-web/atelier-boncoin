@@ -29,7 +29,7 @@ const Register = props => {
     e.preventDefault();
     try {
       const data = await Axios.post(
-        "https://127.0.0.1:8000/api/users",
+        "https://upper-agency.fr/api/users",
         credentials
       );
       setError({});

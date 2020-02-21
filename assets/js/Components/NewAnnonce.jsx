@@ -50,7 +50,7 @@ const NewAnnonce = ({history}) => {
     const handleSubmit = async e => {
         e.preventDefault();
         try {
-            const response = await Axios.post("https://127.0.0.1:8000/api/annonces", annonce);
+            const response = await Axios.post("https://upper-agency.fr/api/annonces", annonce);
             history.replace(`/annonces/${response.data.id}`);
 
 
