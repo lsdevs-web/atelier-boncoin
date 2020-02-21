@@ -1,0 +1,26 @@
+
+.land
+{
+  fill:#86aae0;
+  stroke:white;
+  stroke-width:0.6;
+  cursor: pointer;
+  &:hover {
+    fill: orange;
+  }
+}
+
+/* Change settings and colors below */
+
+
+/* To display the box zoomed in around Paris, set opacity to 1. Default is 0, box hidden*/
+.zoom_box
+{
+  opacity:0;
+}
+
+/* Colorising departements */
+/*
+.departement75
+{ fill: #f22f11; }
+/*  */

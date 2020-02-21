@@ -12,17 +12,25 @@ const ImgSubForm = ({url, errorUrl, errorCaption, handle, caption, num, deleteIm
                     <h2 className="h4">Image n°{num + 1}</h2>
                     <div className="icons-container d-flex">
                         {num < 1 &&
-                            <>
-                                <div className="icon" onClick={() => deleteImg(num)}>
-                                    <FontAwesomeIcon icon={faTrash} color="red"
-                                                     style={{fontSize: "20px", margin: "2px 5px 0 5px", cursor: "pointer"}}/>
-                                </div>
-                                <div className="icon" onClick={handle}>
-                                    <FontAwesomeIcon icon={faPlus} color="blue"
-                                                     style={{fontSize: "20px", margin: "2px 5px 0 5px", cursor: "pointer"}}/>
-                                </div>
+                        <>
+                            <div className="icon" onClick={() => deleteImg(num)}>
+                                <FontAwesomeIcon icon={faTrash} color="red"
+                                                 style={{
+                                                     fontSize: "20px",
+                                                     margin: "2px 5px 0 5px",
+                                                     cursor: "pointer"
+                                                 }}/>
+                            </div>
+                            <div className="icon" onClick={handle}>
+                                <FontAwesomeIcon icon={faPlus} color="blue"
+                                                 style={{
+                                                     fontSize: "20px",
+                                                     margin: "2px 5px 0 5px",
+                                                     cursor: "pointer"
+                                                 }}/>
+                            </div>
 
-                            </>
+                        </>
 
 
                         }
@@ -33,7 +41,7 @@ const ImgSubForm = ({url, errorUrl, errorCaption, handle, caption, num, deleteIm
                     label="Url de l'image principale"
                     value={url}
                     placeholder="Url de votre image"
-                    name={"images["+num+"].url"}
+                    name={"images[" + num + "].url"}
                     onChange={changeUrl}
                     error={errorUrl}
                 />
@@ -41,7 +49,7 @@ const ImgSubForm = ({url, errorUrl, errorCaption, handle, caption, num, deleteIm
                     label="Légende de l'image"
                     value={caption}
                     placeholder="Décrivez brievement votre image"
-                    name={"images["+num+"].caption"}
+                    name={"images[" + num + "].caption"}
                     onChange={changeCaption}
                     error={errorCaption}
                 />

@@ -47,12 +47,10 @@ const AnnonceShow = ({match, history}) => {
 
 
             <>
-                <h2 className="h2 text-left
-
-                span.mt-3L'annonceur :">{annonceData.titre}</h2>
+                <h2 className="h2 text-left"> L'annonceur :">{annonceData.titre}</h2>
 
                 <div className="row">
-                    <div className="col-6 m-0 p-0" >
+                    <div className="col-6 m-0 p-0">
                         <div className="card " style={{height: "70vh"}}>
                             <div className="card-body">
                                 <h2 className="h2 card-title">Quelques images :</h2>
@@ -79,7 +77,9 @@ const AnnonceShow = ({match, history}) => {
                                 <h2 className="h2">Informations supplémentaires :</h2>
 
                                 <div className="mb-2">
-                                    <span className="h4">L'annonceur : {annonceData.user.prenom} {annonceData.user.nom}</span> <br/>
+                                    <span
+                                        className="h4">L'annonceur : {annonceData.user.prenom} {annonceData.user.nom}</span>
+                                    <br/>
                                 </div>
                                 <div className="mb2 mt-2">
                                     <span className="h4">Email : {annonceData.user.email}</span>

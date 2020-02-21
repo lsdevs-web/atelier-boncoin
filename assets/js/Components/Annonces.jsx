@@ -28,6 +28,7 @@ const Annonces = ({history}) => {
     // ComponentDidMount REQUEST
     useEffect(() => {
         fetchAnnonce();
+        console.log(history);
     }, []);
 
 
@@ -40,10 +41,11 @@ const Annonces = ({history}) => {
             annonce.titre.toLowerCase().includes(searchData.search.toLowerCase())
             || annonce.user.prenom.toLowerCase().includes(searchData.search.toLowerCase())
             || annonce.user.nom.toLowerCase().includes(searchData.search.toLowerCase())
-        )
 
+        )
         && annonce.categorie.toLowerCase().includes(searchData.categorie.toLowerCase())
         && annonce.region.toLowerCase().includes(searchData.region.toLowerCase())
+        && annonce.region.toLowerCase().includes(history.location.state.toLowerCase())
     );
 
     // Pagination des Annonces
@@ -92,7 +94,7 @@ const Annonces = ({history}) => {
                     <option>Technologie</option>
                     <option>Automobile</option>
                 </Select>
-                <Select Handle={handleSelect} name="region" defValue="Régions" title="Régions">
+                <Select Handle={handleSelect} name="region" defValue={history.location.state} title="Régions">
                     <option>Tous</option>
                     <option>Ile-de-France</option>
                     <option>Midy-Pyrénnées</option>

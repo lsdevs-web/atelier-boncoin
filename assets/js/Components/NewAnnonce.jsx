@@ -126,7 +126,8 @@ const NewAnnonce = ({history}) => {
 
                             <div className="input-container" style={{width: "33%", margin: "0 4px 0 4px"}}>
                                 <div className="input-row d-flex flex-row">
-                                    <input type="number" className={"form-control " + (error.prix && "is-invalid")} name="prix"
+                                    <input type="number" className={"form-control " + (error.prix && "is-invalid")}
+                                           name="prix"
                                            placeholder="Votre prix"
                                            onChange={handleChange}
                                     />
@@ -151,7 +152,8 @@ const NewAnnonce = ({history}) => {
                         />
                         <div className="form-group">
 
-                            <label className="my-2" style={{fontSize: "20px"}} htmlFor="description">Description de votre
+                            <label className="my-2" style={{fontSize: "20px"}} htmlFor="description">Description de
+                                votre
                                 annonce</label>
                             <textarea style={{maxHeight: "200px"}} placeholder="Décrivez votre annonce"
                                       className={"form-control " + (error.description && "is-invalid")}
@@ -161,7 +163,6 @@ const NewAnnonce = ({history}) => {
                         </div>
                     </div>
                 </div>
-
 
 
                 {annonce.images.map((image, id) => {
@@ -180,7 +181,7 @@ const NewAnnonce = ({history}) => {
 
                 <div className="row d-flex justify-content-end">
 
-                    <button  className="btn btn-dark btn-lg mb-3 mr-3">Créer l'annonce</button>
+                    <button className="btn btn-dark btn-lg mb-3 mr-3">Créer l'annonce</button>
                 </div>
 
 
